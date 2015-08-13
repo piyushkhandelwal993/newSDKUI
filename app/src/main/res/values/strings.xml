@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SdkNewUI</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cardType_prompt">Select Card Type</string>
+    <string-array name="card_types">
+        <item>VISA</item>
+        <item>MASTER</item>
+        <item>MASTERO</item>
+
+    </string-array>
+</resources>
