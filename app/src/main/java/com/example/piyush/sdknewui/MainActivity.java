@@ -1,5 +1,6 @@
 package com.example.piyush.sdknewui;
 
+import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
@@ -7,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.example.piyush.sdknewui.Adapter.PageAdapter;
 import com.example.piyush.sdknewui.Utils.SdkUIConstants;
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private SlidingTabLayout slidingTabLayout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +35,12 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(pagerAdapter);
 
+        viewPager.setPageMargin(3);
+        viewPager.setPageMarginDrawable(R.color.black);
+
         slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tab_layout);
         slidingTabLayout.setDistributeEvenly(false);
+
 
         slidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
@@ -43,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Setting the ViewPager For the SlidingTabsLayout
         slidingTabLayout.setViewPager(viewPager);
+//        slidingTabLayout.setSelectedIndicatorColors(R.color.color_paynow_button);
+
+//        Spinner mSpinner = (Spinner) findViewById(R.id.spinner);
+//        ArrayAdapter<CharSequence> mAdapter = ArrayAdapter.createFromResource(this, R.array.bank_names,
+//                android.R.layout.simple_spinner_item);
+//
+//        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        mSpinner.setAdapter(mAdapter);
+
     }
 
     @Override

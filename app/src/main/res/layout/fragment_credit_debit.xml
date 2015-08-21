@@ -1,11 +1,20 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent" android:background="#FFFFFF"
     tools:context="com.example.piyush.sdknewui.fragments.CreditDebitFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -15,27 +24,19 @@
         android:layout_marginTop="30dp"
         android:layout_weight="5">
 
-        <TextView android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Card Type"></TextView>
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_rect_shape"
-            android:orientation="vertical"
-            android:padding="0dp" >
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/card_types"
-            android:prompt="@string/cardType_prompt" />
-        </LinearLayout>
+
 
         <TextView android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Enter Card Details"></TextView>
+                android:textColor="#9C9C9C"
+                android:textStyle="bold"
+                android:text="@string/enter_card_details"></TextView>
+
+        <TextView android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:text=""></TextView>
+
 
 
         <LinearLayout
@@ -44,80 +45,187 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_rect_shape"
                 android:orientation="vertical"
+                android:weightSum="3"
                 android:padding="0dp" >
 
-               <!--&lt;!&ndash; <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Something text"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ff0000" />
-
-                <EditText
-                    android:id="@+id/editText1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >&ndash;&gt;
-
-                    <requestFocus />
-                </EditText>
--->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_height="0dp"
+                android:layout_margin="15dp"
                 android:layout_weight="1"
-                android:background="@drawable/my_custom_background">
+                android:orientation="horizontal">
+
                 <EditText
-                    android:id="@+id/editText1"
+                    android:id="@+id/editTextNameOnCard"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Name on card"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:textSize="15dp"
+                    android:hint="@string/name_on_card"
                     android:background="#00000000"
                     >
                 </EditText>
 
+
+
+
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C9C9C" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/my_custom_background">
-                <EditText
-                    android:id="@+id/editText2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#00000000"
-                    android:hint=" XXXX-XXXX-XXXX-3306">
-                </EditText>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_height="0dp"
+                android:layout_margin="15dp"
                 android:layout_weight="1">
                 <EditText
-                    android:id="@+id/editText3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/editTextCardNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="19"
                     android:background="#00000000"
-                    android:hint="CVV">
+                    android:layout_weight="5"
+                    android:textSize="15dp"
+                    android:hint="@string/card_number_format">
                 </EditText>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/icon_card"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true"/>
+
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C9C9C" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_margin="15dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:orientation="horizontal">
+
+                <TextView android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:textColor="#302F2F"
+                    android:textSize="15dp"
+                    android:text="@string/expires"></TextView>
+
+                <EditText
+                    android:id="@+id/editTextExpiryMonth"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:layout_weight="2"
+                    android:background="#00000000"
+                    android:textSize="15dp"
+                    android:hint="@string/month_format">
+                </EditText>
+
+                <EditText
+                    android:id="@+id/editTextExpiryYear"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:layout_weight="2"
+                    android:background="#00000000"
+                    android:textSize="15dp"
+                    android:hint="@string/year_format">
+
+
+                </EditText>
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#9C9C9C"
+                        />
+
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="      "
+                        android:longClickable="false"></TextView>
+
+                <EditText
+                    android:id="@+id/editText1Cvv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:maxLength="3"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:background="#00000000"
+                    android:hint="@string/cvv">
+                </EditText>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/image_cvv"
+                    android:scaleType="centerInside"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"/>
+
+                    </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save_card"
+                android:textColor="#9C9C9C"
+                android:id="@+id/checkBoxSaveCard"/>
+
         </LinearLayout>
 
     </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:text="Pay Now"
-                android:background="@android:color/background_light"/>
-        </LinearLayout>
+
+
     </LinearLayout>
+
+
+ </ScrollView>
+
 </FrameLayout>
